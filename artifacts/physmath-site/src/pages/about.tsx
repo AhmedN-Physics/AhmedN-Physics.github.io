@@ -4,31 +4,22 @@ export default function About() {
       <header className="space-y-4 border-b border-border/50 pb-8">
         <h1 className="text-4xl font-bold tracking-tight">About</h1>
         <p className="text-xl text-muted-foreground font-medium italic">
-          Educator, Researcher, Lifelong Student.
+          Ahmed Alotaibi
         </p>
       </header>
 
       <div className="prose prose-lg dark:prose-invert font-sans text-muted-foreground">
         <p>
-          My name is [Name], and I run the <strong>physmath done right</strong> channel. 
-          My background lies at the intersection of theoretical physics and pure mathematics, 
-          specifically in mathematical physics, differential geometry, and quantum field theory.
+          I am Ahmed Alotaibi, a senior double major in Physics and Mathematics at King Fahd University of Petroleum and Minerals. My passion lies in understanding the nature of reality via the lens of mathematical objects. This leads me to be interested mainly in theoretical physics, and in particular condensed matter physics and quantum field theory. My goal is to be part of the scientific community and be able to push the wheels of science forward, even if it is just a little bit.
         </p>
         
         <h3 className="text-foreground mt-8 mb-4 font-serif text-2xl">Teaching Philosophy</h3>
         <p>
-          I believe that mathematics should not be a collection of disparate tricks, but a cohesive 
-          narrative. When teaching, my goal is to highlight the underlying structures and symmetries 
-          that govern physical laws. A rigorous proof is not just a verification of truth, but an 
-          explanation of why that truth must hold.
+          Teaching, for me, is more about learning than sharing. Every time I teach a topic, I learn totally new things that I missed when I was learning it. I also believe that physics should be taught in a way that makes it intuitive and not just a bunch of formulas. Everyone eventually can understand physics if it is taught in a way that makes it intuitive and not just a bunch of formulas.
         </p>
 
-        <h3 className="text-foreground mt-8 mb-4 font-serif text-2xl">Academic Background</h3>
-        <ul className="list-disc pl-6 space-y-2">
-          <li><strong>Ph.D. in Mathematical Physics</strong> — Focus on topological quantum field theories.</li>
-          <li><strong>M.Sc. in Pure Mathematics</strong> — Thesis on manifold structures in gauge theory.</li>
-          <li><strong>B.Sc. in Physics and Mathematics</strong></li>
-        </ul>
+        
+        
       </div>
     </div>
   );

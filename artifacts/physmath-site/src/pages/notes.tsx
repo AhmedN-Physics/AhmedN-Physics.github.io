@@ -3,8 +3,8 @@ import { Badge } from "@/components/ui/badge";
 const notes = [
   {
     id: 1,
-    title: "Lagrangian & Hamiltonian Mechanics",
-    category: "Classical Mechanics",
+    title: "Chapter 1",
+    category: "Qunatum Mechanics",
     description: "An axiomatic approach to classical mechanics using the calculus of variations. Moving from Newtonian forces to energy-based formulations.",
     date: "2024-03-12"
   },

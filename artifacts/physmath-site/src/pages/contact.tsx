@@ -18,9 +18,9 @@ export default function Contact() {
             For professional inquiries, tutoring requests, or academic discussions:
           </p>
           <Button variant="outline" className="font-mono text-sm" asChild data-testid="link-email">
-            <a href="mailto:contact@example.com">
+            <a href="mailto:ahmedalotaibiphys@gmail.com">
               <Mail className="w-4 h-4 mr-2" />
-              contact@physmathdoneright.com
+              ahmedalotaibiphys@gmail.com
             </a>
           </Button>
         </div>
@@ -29,7 +29,7 @@ export default function Contact() {
           <h2 className="text-lg font-semibold border-b border-border/30 pb-2 inline-block">Digital Presence</h2>
           <div className="flex flex-col gap-4">
             <a 
-              href="https://youtube.com" 
+              href="https://youtube.com/@physmathdoneright?si=nEzytJ7-G2S39nPG" 
               target="_blank" 
               rel="noreferrer"
               className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors p-3 border border-border/50 bg-card hover:bg-secondary/20"

@@ -13,9 +13,7 @@ export default function Home() {
         
         <div className="prose prose-lg dark:prose-invert text-muted-foreground max-w-2xl font-sans">
           <p>
-            Welcome. I am a mathematics and physics educator dedicated to pedagogical rigor and clarity. 
-            This space serves as a digital notebook for my students and anyone interested in the foundational 
-            structures of theoretical physics and pure mathematics.
+            Welcome. I am Ahmed Alotaibi, and this is my personal website. It contains my notes on various topics in physics and mathematics, my future publications, and my contact information.
           </p>
         </div>
 
@@ -26,7 +24,7 @@ export default function Home() {
             </Link>
           </Button>
           <Button asChild variant="outline" className="font-mono bg-transparent" data-testid="button-youtube">
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="flex items-center gap-2">
+            <a href="https://youtube.com/@physmathdoneright?si=CfAuGqmAn3MUlrQi" target="_blank" rel="noreferrer" className="flex items-center gap-2">
               <Youtube className="w-4 h-4" /> YouTube Channel
             </a>
           </Button>
