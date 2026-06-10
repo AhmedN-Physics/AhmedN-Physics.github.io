@@ -3,7 +3,7 @@ export default function About() {
     <div className="flex flex-col gap-12 max-w-3xl">
       <header className="space-y-4 border-b border-border/50 pb-8">
         <h1 className="text-4xl font-bold tracking-tight">About</h1>
-        <p className="text-xl text-muted-foreground font-medium italic">
+        <p className="text-xl text-muted-foreground font-medium bold">
           Ahmed Alotaibi
         </p>
       </header>

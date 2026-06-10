@@ -7,8 +7,8 @@ export default function Home() {
     <div className="flex flex-col gap-16">
       <section className="space-y-6">
         <h1 className="text-4xl md:text-5xl font-bold text-primary leading-tight tracking-tight">
-          Physics and Mathematics, <br/>
-          <span className="text-muted-foreground italic font-medium">taught with precision.</span>
+          Ahmed Alotaibi, <br/>
+          <span className="text-muted-foreground italic font-medium"></span>
         </h1>
         
         <div className="prose prose-lg dark:prose-invert text-muted-foreground max-w-2xl font-sans">

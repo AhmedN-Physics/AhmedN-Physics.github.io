@@ -6,20 +6,7 @@ const publications = [
     year: "2023",
     abstract: "We explore a novel class of topological invariants emerging from 3-dimensional Chern-Simons theory. By utilizing a modified path integral formulation, we demonstrate a direct correspondence between these invariants and knot polynomials..."
   },
-  {
-    id: "pub-2",
-    title: "On the geometric quantization of symplectic manifolds",
-    venue: "Communications in Mathematical Physics",
-    year: "2021",
-    abstract: "This paper reviews the Kostant-Souriau prequantization procedure and addresses the anomalies arising from half-form corrections. We provide a rigorous framework for quantizing a specific family of non-compact symplectic manifolds."
-  },
-  {
-    id: "pub-3",
-    title: "Pedagogical approaches to tensor calculus in general relativity",
-    venue: "American Journal of Physics",
-    year: "2019",
-    abstract: "A survey of modern instructional methodologies for introducing tensor calculus to undergraduate physics students. We argue that a coordinate-free, geometric approach initially yields better intuition than traditional index manipulation."
-  }
+  
 ];
 
 export default function Publications() {

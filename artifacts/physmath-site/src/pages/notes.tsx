@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronRight, FileText } from "lucide-react";
+import { ChevronDown, ChevronRight, FileText, ExternalLink } from "lucide-react";
 
 const categories = [
   {
@@ -7,9 +7,9 @@ const categories = [
     name: "Quantum Mechanics",
     description: "From wave mechanics to the axiomatic Hilbert-space formulation.",
     chapters: [
-      { id: 1, title: "Chapter 1 — The Failure of Classical Physics", date: "2024-03-12", description: "Blackbody radiation, photoelectric effect, and the path to quantisation." },
-      { id: 2, title: "Chapter 2 — Wave Functions & the Schrödinger Equation", date: "2024-03-20", description: "Probability interpretation, normalization, and time evolution." },
-      { id: 3, title: "Chapter 3 — Operators and Observables", date: "2024-04-01", description: "Hermitian operators, eigenvalues, and the measurement postulate." },
+      { id: 1, title: "Chapter 1 — The Failure of Classical Physics", date: "2024-03-12", description: "Blackbody radiation, photoelectric effect, and the path to quantisation.", pdfUrl: null },
+      { id: 2, title: "Chapter 2 — Wave Functions & the Schrödinger Equation", date: "2024-03-20", description: "Probability interpretation, normalization, and time evolution.", pdfUrl: null },
+      { id: 3, title: "Chapter 3 — Operators and Observables", date: "2024-04-01", description: "Hermitian operators, eigenvalues, and the measurement postulate.", pdfUrl: null },
     ],
   },
   {
@@ -17,8 +17,8 @@ const categories = [
     name: "Topology",
     description: "Point-set foundations through to the fundamental group.",
     chapters: [
-      { id: 4, title: "Chapter 1 — Topological Spaces", date: "2024-02-28", description: "Definitions of open sets, neighborhoods, bases, and sub-bases." },
-      { id: 5, title: "Chapter 2 — Compactness & Connectedness", date: "2024-03-05", description: "Finite-cover characterisations, path-connectedness, and components." },
+      { id: 4, title: "Chapter 1 — Topological Spaces", date: "2024-02-28", description: "Definitions of open sets, neighborhoods, bases, and sub-bases.", pdfUrl: null },
+      { id: 5, title: "Chapter 2 — Compactness & Connectedness", date: "2024-03-05", description: "Finite-cover characterisations, path-connectedness, and components.", pdfUrl: null },
     ],
   },
   {
@@ -26,9 +26,9 @@ const categories = [
     name: "Linear Algebra",
     description: "Linear maps as the central objects — matrices as a computational tool.",
     chapters: [
-      { id: 6, title: "Chapter 1 — Vector Spaces", date: "2024-01-15", description: "Axioms, subspaces, span, linear independence, and bases." },
-      { id: 7, title: "Chapter 2 — Linear Maps", date: "2024-01-22", description: "Null space, range, rank-nullity theorem." },
-      { id: 8, title: "Chapter 3 — Inner Product Spaces", date: "2024-01-30", description: "Gram-Schmidt, orthogonal projections, and the spectral theorem." },
+      { id: 6, title: "Chapter 1 — Vector Spaces", date: "2024-01-15", description: "Axioms, subspaces, span, linear independence, and bases.", pdfUrl: null },
+      { id: 7, title: "Chapter 2 — Linear Maps", date: "2024-01-22", description: "Null space, range, rank-nullity theorem.", pdfUrl: null },
+      { id: 8, title: "Chapter 3 — Inner Product Spaces", date: "2024-01-30", description: "Gram-Schmidt, orthogonal projections, and the spectral theorem.", pdfUrl: null },
     ],
   },
   {
@@ -36,9 +36,9 @@ const categories = [
     name: "Real Analysis",
     description: "Rigorous foundations of limits, continuity, differentiation, and integration.",
     chapters: [
-      { id: 9, title: "Chapter 1 — The Real Numbers", date: "2023-11-04", description: "Completeness axiom, supremum, infimum, and Archimedean property." },
-      { id: 10, title: "Chapter 2 — Sequences and Series", date: "2023-11-18", description: "Cauchy sequences, convergence tests, and power series." },
-      { id: 11, title: "Chapter 3 — Measure Theory & Lebesgue Integration", date: "2023-12-02", description: "Why Riemann integration fails and how Lebesgue measure resolves it." },
+      { id: 9, title: "Chapter 1 — The Real Numbers", date: "2023-11-04", description: "Completeness axiom, supremum, infimum, and Archimedean property.", pdfUrl: null },
+      { id: 10, title: "Chapter 2 — Sequences and Series", date: "2023-11-18", description: "Cauchy sequences, convergence tests, and power series.", pdfUrl: null },
+      { id: 11, title: "Chapter 3 — Measure Theory & Lebesgue Integration", date: "2023-12-02", description: "Why Riemann integration fails and how Lebesgue measure resolves it.", pdfUrl: null },
     ],
   },
   {
@@ -46,8 +46,8 @@ const categories = [
     name: "Mathematical Physics",
     description: "The mathematical language behind classical and quantum theories.",
     chapters: [
-      { id: 12, title: "Chapter 1 — Lagrangian Formalism", date: "2023-09-10", description: "Calculus of variations, Euler-Lagrange equations, and constraints." },
-      { id: 13, title: "Chapter 2 — Symmetries and Conservation Laws", date: "2023-09-22", description: "Noether's theorem: every continuous symmetry yields a conserved current." },
+      { id: 12, title: "Chapter 1 — Lagrangian Formalism", date: "2023-09-10", description: "Calculus of variations, Euler-Lagrange equations, and constraints.", pdfUrl: null },
+      { id: 13, title: "Chapter 2 — Symmetries and Conservation Laws", date: "2023-09-22", description: "Noether's theorem: every continuous symmetry yields a conserved current.", pdfUrl: null },
     ],
   },
 ];
@@ -108,11 +108,36 @@ export default function Notes() {
                     >
                       <FileText className="w-4 h-4 mt-1 shrink-0 text-muted-foreground" />
                       <div className="flex-1 min-w-0">
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
-                          <h3 className="font-medium">{ch.title}</h3>
-                          <time className="text-xs font-mono text-muted-foreground shrink-0">{ch.date}</time>
+                        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-1">
+                          <div className="flex-1 min-w-0">
+                            <h3 className="font-medium">{ch.title}</h3>
+                            <p className="text-sm text-muted-foreground leading-relaxed mt-1">{ch.description}</p>
+                          </div>
+                          <div className="flex items-center gap-3 shrink-0 sm:ml-4">
+                            <time className="text-xs font-mono text-muted-foreground">{ch.date}</time>
+                            {ch.pdfUrl ? (
+                              <a
+                                href={ch.pdfUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono border border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-150"
+                                data-testid={`pdf-link-${ch.id}`}
+                              >
+                                <ExternalLink className="w-3 h-3" />
+                                View PDF
+                              </a>
+                            ) : (
+                              <span
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono border border-border/40 text-muted-foreground/50 cursor-default select-none"
+                                data-testid={`pdf-soon-${ch.id}`}
+                              >
+                                <FileText className="w-3 h-3" />
+                                Coming soon
+                              </span>
+                            )}
+                          </div>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{ch.description}</p>
                       </div>
                     </div>
                   ))}
