@@ -1,0 +1,40 @@
+Now let me update the Vite config to make it GitHub Pages compatible while still working in Replit:
+
+8 actions
+Now let me add the 404.html fallback for SPA routing and create the GitHub Actions deployment workflow.
+
+3 actions
+The public/404.html copy won't get the base-path-rewritten asset URLs since Vite doesn't process files in public/ through its HTML transform — only the root index.html. Let me fix that by generating 404.html from the built output instead.
+
+3 actions
+Now let me add the GitHub Actions workflow to build and deploy automatically to GitHub Pages:
+
+9 actions
+Now let's verify everything builds correctly and restart the workflow to confirm nothing broke.
+
+Ran cd
+The build succeeded with the correct /physmath-site/ base path, and 404.html was generated correctly. Let me verify the output paths use the base correctly and clean up test artifacts.
+
+Ran grep
+Build verified — both index.html and 404.html correctly resolve assets under /physmath-site/. Let me clean up the test build output and restart the dev workflow to confirm Replit preview still works.
+
+3 actions
+Everything is running cleanly. Let me take a final screenshot to confirm the Replit preview still works after these changes, then summarize.
+
+Took a screenshot
+Everything's working correctly on Replit still, and the site builds cleanly with GitHub Pages paths. Here's a summary of what I changed:
+
+1. vite.config.ts — PORT/BASE_PATH are now only required for local dev, not for a standalone build. Added a new GH_PAGES_BASE env var so the build can be given the right base path (e.g. /physmath-site/) without needing Replit's proxy config.
+
+2. package.json — added a build:gh-pages script that builds the site and then duplicates index.html as 404.html. This is the standard trick for single-page apps on GitHub Pages: since GitHub Pages serves static files only, navigating directly to a route like /notes would normally 404 — serving your own index.html as the 404 page lets the app's router take over and show the right page. Removed the unused @workspace/api-client-react dependency since this site is fully static and never called it.
+
+3. .github/workflows/deploy-pages.yml — a GitHub Actions workflow that automatically builds and publishes the site to GitHub Pages every time you push to main. It sets GH_PAGES_BASE to /<your-repo-name>/ automatically, matching how GitHub Pages serves project sites at username.github.io/repo-name/.
+
+To actually go live, once you push this repo to GitHub:
+
+In the GitHub repo, go to Settings → Pages → set "Source" to GitHub Actions.
+Push to main — the workflow will build and deploy automatically.
+If you use a custom domain instead of username.github.io/repo-name, change GH_PAGES_BASE in the workflow to /.
+Your Replit preview is unaffected — it keeps using BASE_PATH from the workspace as before.
+
+Next, I can add a CNAME file and Actions step so you can point a custom domain (like physmathdoneright.com) at the GitHub Pages deployment. Would you like me to do that?
