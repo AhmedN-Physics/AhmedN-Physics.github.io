@@ -12,15 +12,7 @@ const categories = [
       { id: 3, title: "Chapter 3 — Operators and Observables", date: "2024-04-01", description: "Hermitian operators, eigenvalues, and the measurement postulate.", pdfUrl: null },
     ],
   },
-  {
-    id: "topology",
-    name: "Topology",
-    description: "Point-set foundations through to the fundamental group.",
-    chapters: [
-      { id: 4, title: "Chapter 1 — Topological Spaces", date: "2024-02-28", description: "Definitions of open sets, neighborhoods, bases, and sub-bases.", pdfUrl: null },
-      { id: 5, title: "Chapter 2 — Compactness & Connectedness", date: "2024-03-05", description: "Finite-cover characterisations, path-connectedness, and components.", pdfUrl: null },
-    ],
-  },
+ ,
   {
     id: "linear-algebra",
     name: "Linear Algebra",

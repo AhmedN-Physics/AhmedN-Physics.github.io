@@ -4,30 +4,35 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
+const isBuild = process.argv.includes("build");
 const rawPort = process.env.PORT;
 
-if (!rawPort) {
+if (!rawPort && !isBuild) {
   throw new Error(
     "PORT environment variable is required but was not provided.",
   );
 }
 
-const port = Number(rawPort);
+const port = Number(rawPort ?? 5173);
 
 if (Number.isNaN(port) || port <= 0) {
   throw new Error(`Invalid PORT value: "${rawPort}"`);
 }
 
-const basePath = process.env.BASE_PATH;
+// On Replit, BASE_PATH is injected by the workspace proxy config.
+// For a standalone GitHub Pages build, set GH_PAGES_BASE instead, e.g.
+// GH_PAGES_BASE="/your-repo-name/" for a project page, or "/" for a
+// custom domain / user-or-org page (username.github.io).
+const basePath = process.env.BASE_PATH ?? process.env.GH_PAGES_BASE;
 
-if (!basePath) {
+if (!basePath && !isBuild) {
   throw new Error(
     "BASE_PATH environment variable is required but was not provided.",
   );
 }
 
 export default defineConfig({
-  base: basePath,
+  base: basePath ?? "/",
   plugins: [
     react(),
     tailwindcss(),
