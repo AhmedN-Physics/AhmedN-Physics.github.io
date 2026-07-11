@@ -18,9 +18,9 @@ export default function Contact() {
             For professional inquiries, tutoring requests, or academic discussions:
           </p>
           <Button variant="outline" className="font-mono text-sm" asChild data-testid="link-email">
-            <a href="mailto:ahmedalotaibiphys@gmail.com">
+            <a href="mailto:ahmedn.phys@gmail.com">
               <Mail className="w-4 h-4 mr-2" />
-              ahmedalotaibiphys@gmail.com
+              ahmedn.phys@gmail.com
             </a>
           </Button>
         </div>
