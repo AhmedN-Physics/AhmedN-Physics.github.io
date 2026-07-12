@@ -18,8 +18,8 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       <aside className="w-full md:w-64 border-b md:border-b-0 md:border-r border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-6 flex flex-col md:sticky md:top-0 md:h-screen shrink-0 z-40">
         <div className="mb-12 hidden md:block">
           <Link href="/" className="text-xl font-bold tracking-tight text-primary">
-            physmath <br />
-            <span className="text-muted-foreground font-mono text-sm tracking-normal">done right</span>
+            Ahmed <br />
+            <span className="text-muted-foreground font-mono text-sm tracking-normal">Alotaibi</span>
           </Link>
         </div>
         
@@ -43,7 +43,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         </nav>
 
         <div className="mt-auto hidden md:block pt-8 text-xs text-muted-foreground font-mono">
-          © {new Date().getFullYear()} physmath done right
+          © {new Date().getFullYear()} Ahmed Alotaibi
         </div>
       </aside>
 

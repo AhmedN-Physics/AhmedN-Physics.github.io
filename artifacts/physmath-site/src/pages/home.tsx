@@ -35,19 +35,13 @@ export default function Home() {
         <h2 className="text-2xl font-semibold tracking-tight">Recent Additions</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <Link href="/notes" className="group block p-6 border border-border/50 bg-card hover:bg-secondary/30 transition-colors" data-testid="card-recent-1">
-            <div className="text-xs font-mono text-muted-foreground mb-3">Topology</div>
-            <h3 className="text-lg font-medium mb-2 group-hover:text-primary/80 transition-colors">A Primer on Point-Set Topology</h3>
+            <div className="text-xs font-mono text-muted-foreground mb-3">Quantum Mechanics</div>
+            <h3 className="text-lg font-medium mb-2 group-hover:text-primary/80 transition-colors">Foundations and Applications</h3>
             <p className="text-sm text-muted-foreground line-clamp-2">
-              Notes on open sets, limit points, and continuous functions. A gentle introduction before moving onto algebraic topology.
+              An introduction to the mathematical framework of quantum mechanics, including Hilbert spaces and observables.
             </p>
           </Link>
-          <Link href="/notes" className="group block p-6 border border-border/50 bg-card hover:bg-secondary/30 transition-colors" data-testid="card-recent-2">
-            <div className="text-xs font-mono text-muted-foreground mb-3">Classical Mechanics</div>
-            <h3 className="text-lg font-medium mb-2 group-hover:text-primary/80 transition-colors">Lagrangian Formalism</h3>
-            <p className="text-sm text-muted-foreground line-clamp-2">
-              Deriving the Euler-Lagrange equations from the principle of stationary action. Examples with double pendulums.
-            </p>
-          </Link>
+          
         </div>
       </section>
     </div>

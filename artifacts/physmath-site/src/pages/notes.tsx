@@ -23,16 +23,8 @@ const categories = [
       { id: 8, title: "Chapter 3 — Inner Product Spaces", date: "2024-01-30", description: "Gram-Schmidt, orthogonal projections, and the spectral theorem.", pdfUrl: null },
     ],
   },
-  {
-    id: "real-analysis",
-    name: "Real Analysis",
-    description: "Rigorous foundations of limits, continuity, differentiation, and integration.",
-    chapters: [
-      { id: 9, title: "Chapter 1 — The Real Numbers", date: "2023-11-04", description: "Completeness axiom, supremum, infimum, and Archimedean property.", pdfUrl: null },
-      { id: 10, title: "Chapter 2 — Sequences and Series", date: "2023-11-18", description: "Cauchy sequences, convergence tests, and power series.", pdfUrl: null },
-      { id: 11, title: "Chapter 3 — Measure Theory & Lebesgue Integration", date: "2023-12-02", description: "Why Riemann integration fails and how Lebesgue measure resolves it.", pdfUrl: null },
-    ],
-  },
+  
+  
   {
     id: "mathematical-physics",
     name: "Mathematical Physics",

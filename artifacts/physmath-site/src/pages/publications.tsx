@@ -1,10 +1,10 @@
 const publications = [
   {
     id: "pub-1",
-    title: "Topological invariants in low-dimensional gauge theories",
-    venue: "Journal of Mathematical Physics",
-    year: "2023",
-    abstract: "We explore a novel class of topological invariants emerging from 3-dimensional Chern-Simons theory. By utilizing a modified path integral formulation, we demonstrate a direct correspondence between these invariants and knot polynomials..."
+    title: "Variational Approaches for degenerate perturbation theory: Fixing the thermodynamic limit",
+    venue: "TBA",
+    year: "2026",
+    abstract: "We develop three non-perturbative variational formulations of the Schrieffer–Wolff transformation that overcome the thermodynamic-limit problem by exploiting locality or using cluster traces within variational principles. Applied to the one-dimensional Hubbard model, the cluster-trace McLachlan and Dirac–Frenkel methods significantly outperform conventional perturbation theory, with the Dirac–Frenkel approach achieving comparable accuracy through a simpler first-order formulation."
   },
   
 ];
@@ -15,7 +15,7 @@ export default function Publications() {
       <header className="space-y-4 border-b border-border/50 pb-8">
         <h1 className="text-4xl font-bold tracking-tight">Publications</h1>
         <p className="text-xl text-muted-foreground">
-          Selected peer-reviewed research and educational papers.
+          A collection of my research papers, preprints, and other scholarly works in physics and mathematics.
         </p>
       </header>
 
