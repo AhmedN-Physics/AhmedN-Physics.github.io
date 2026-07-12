@@ -18,9 +18,11 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       <aside className="w-full md:w-64 border-b md:border-b-0 md:border-r border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-6 flex flex-col md:sticky md:top-0 md:h-screen shrink-0 z-40">
         <div className="mb-12 hidden md:block">
           <Link href="/" className="text-xl font-bold tracking-tight text-primary">
-            Ahmed <br />
-            <span className="text-muted-foreground font-mono text-sm tracking-normal">Alotaibi</span>
-          </Link>
+  Ahmed <br />
+  <span className="text-lg font-semibold text-muted-foreground">
+    Alotaibi
+  </span>
+</Link>
         </div>
         
         <nav className="flex md:flex-col gap-4 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0">

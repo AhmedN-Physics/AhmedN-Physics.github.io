@@ -7,7 +7,7 @@ const categories = [
     name: "Quantum Mechanics",
     description: "From wave mechanics to the axiomatic Hilbert-space formulation.",
     chapters: [
-      { id: 1, title: "Chapter 1 — The Failure of Classical Physics", date: "2024-03-12", description: "Blackbody radiation, photoelectric effect, and the path to quantisation.", pdfUrl: null },
+      { id: 1, title: "Chapter 1 — The Failure of Classical Physics", description: "Blackbody radiation, photoelectric effect, and the path to quantisation.", pdfUrl: null },
       { id: 2, title: "Chapter 2 — Wave Functions & the Schrödinger Equation", date: "2024-03-20", description: "Probability interpretation, normalization, and time evolution.", pdfUrl: null },
       { id: 3, title: "Chapter 3 — Operators and Observables", date: "2024-04-01", description: "Hermitian operators, eigenvalues, and the measurement postulate.", pdfUrl: null },
     ],
@@ -18,22 +18,14 @@ const categories = [
     name: "Linear Algebra",
     description: "Linear maps as the central objects — matrices as a computational tool.",
     chapters: [
-      { id: 6, title: "Chapter 1 — Vector Spaces", date: "2024-01-15", description: "Axioms, subspaces, span, linear independence, and bases.", pdfUrl: null },
-      { id: 7, title: "Chapter 2 — Linear Maps", date: "2024-01-22", description: "Null space, range, rank-nullity theorem.", pdfUrl: null },
-      { id: 8, title: "Chapter 3 — Inner Product Spaces", date: "2024-01-30", description: "Gram-Schmidt, orthogonal projections, and the spectral theorem.", pdfUrl: null },
+      { id: 6, title: "Chapter 1 — Vector Spaces",  description: "Axioms, subspaces, span, linear independence, and bases.", pdfUrl: null },
+      { id: 7, title: "Chapter 2 — Linear Maps",  description: "Null space, range, rank-nullity theorem.", pdfUrl: null },
+      { id: 8, title: "Chapter 3 — Inner Product Spaces",  description: "Gram-Schmidt, orthogonal projections, and the spectral theorem.", pdfUrl: null },
     ],
   },
   
   
-  {
-    id: "mathematical-physics",
-    name: "Mathematical Physics",
-    description: "The mathematical language behind classical and quantum theories.",
-    chapters: [
-      { id: 12, title: "Chapter 1 — Lagrangian Formalism", date: "2023-09-10", description: "Calculus of variations, Euler-Lagrange equations, and constraints.", pdfUrl: null },
-      { id: 13, title: "Chapter 2 — Symmetries and Conservation Laws", date: "2023-09-22", description: "Noether's theorem: every continuous symmetry yields a conserved current.", pdfUrl: null },
-    ],
-  },
+  
 ];
 
 export default function Notes() {
