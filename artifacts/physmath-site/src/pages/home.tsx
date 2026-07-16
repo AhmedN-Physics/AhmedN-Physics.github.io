@@ -6,57 +6,74 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-16">
       <section className="grid items-center gap-8 md:grid-cols-[220px_minmax(0,1fr)] md:gap-12">
-  <div className="flex justify-center md:justify-start">
-    <img
-      src="/ahmedn1.png"
-      alt="Ahmed N. Alotaibi"
-      className="h-72 w-60 max-w-full rounded-2xl border border-border object-cover shadow-xl sm:h-80 sm:w-64 md:h-64 md:w-52"
-    />
-  </div>
+        <div className="flex justify-center md:justify-start">
+          <img
+            src="/ahmedn1.png"
+            alt="Ahmed N. Alotaibi"
+            className="h-72 w-60 max-w-full rounded-2xl border border-border object-cover shadow-xl sm:h-80 sm:w-64 md:h-64 md:w-52"
+          />
+        </div>
 
-  <div className="min-w-0 space-y-6 text-center md:text-left">
-    <h1 className="text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl md:text-5xl">
-      Ahmed N. Alotaibi
-    </h1>
+        <div className="min-w-0 space-y-6 text-center md:text-left">
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl">
+            Ahmed N. Alotaibi
+          </h1>
 
-    <div className="prose prose-lg mx-auto max-w-2xl font-sans text-muted-foreground dark:prose-invert md:mx-0">
-      <p>
-        Welcome. I am Ahmed N. Alotaibi, and this is my personal website. It
-        contains my notes on various topics in physics and mathematics, my
-        future publications, and my contact information.
-      </p>
-    </div>
+          <div className="prose prose-lg mx-auto max-w-2xl font-sans text-muted-foreground dark:prose-invert md:mx-0">
+            <p>
+              Welcome, and thank you for visiting my website. My name is Ahmed
+              Nasser Alotaibi, and this website serves as a central place for
+              my academic work, including notes, lectures, publications, and
+              future projects.
+            </p>
 
-    <div className="flex flex-col gap-4 pt-4 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
-      <Button
-        asChild
-        className="w-full font-mono sm:w-auto"
-        data-testid="button-explore-notes"
-      >
-        <Link href="/notes" className="flex items-center justify-center gap-2">
-          Explore Notes <ArrowRight className="h-4 w-4" />
-        </Link>
-      </Button>
+            <p>
+              To know more about me {" "}
+              <Link
+                href="/about"
+                className="font-medium text-primary underline underline-offset-4 transition-opacity hover:opacity-70"
+              >
+                About page
+              </Link>
+              .
+            </p>
+          </div>
 
-      <Button
-        asChild
-        variant="outline"
-        className="w-full bg-transparent font-mono sm:w-auto"
-        data-testid="button-youtube"
-      >
-        <a
-          href="https://youtube.com/@physmathdoneright?si=CfAuGqmAn3MUlrQi"
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center justify-center gap-2"
-        >
-          <Youtube className="h-4 w-4" />
-          YouTube Channel
-        </a>
-      </Button>
-    </div>
-  </div>
-</section>
+          <div className="flex flex-col gap-4 pt-4 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
+            <Button
+              asChild
+              className="w-full font-mono sm:w-auto"
+              data-testid="button-explore-notes"
+            >
+              <Link
+                href="/notes"
+                className="flex items-center justify-center gap-2"
+              >
+                Explore Notes
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+
+            <Button
+              asChild
+              variant="outline"
+              className="w-full bg-transparent font-mono sm:w-auto"
+              data-testid="button-youtube"
+            >
+              <a
+                href="https://youtube.com/@physmathdoneright?si=CfAuGqmAn3MUlrQi"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <Youtube className="h-4 w-4" />
+                YouTube Channel
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section className="space-y-8 border-t border-border/50 pt-12">
         <h2 className="text-2xl font-semibold tracking-tight">
           Recent Additions
