@@ -1,122 +1,216 @@
 import { useState } from "react";
-import { ChevronDown, ChevronRight, FileText, ExternalLink } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronRight,
+  ExternalLink,
+  FileText,
+} from "lucide-react";
 
-const categories = [
+type Chapter = {
+  id: number;
+  title: string;
+  description: string;
+  date?: string;
+  pdfUrl?: string | null;
+};
+
+type Category = {
+  id: string;
+  name: string;
+  description: string;
+  chapters?: Chapter[];
+  pdfUrl?: string;
+};
+
+const categories: Category[] = [
   {
     id: "quantum-mechanics",
     name: "Quantum Mechanics",
-    description: "From wave mechanics to the axiomatic Hilbert-space formulation.",
+    description:
+      "An introduction to the fundamental principles and applications of quantum mechanics.",
     chapters: [
-      { id: 1, title: "Chapter 1 — The Failure of Classical Physics", description: "Blackbody radiation, photoelectric effect, and the path to quantisation.", pdfUrl: null },
-      { id: 2, title: "Chapter 2 — Wave Functions & the Schrödinger Equation", date: "2024-03-20", description: "Probability interpretation, normalization, and time evolution.", pdfUrl: null },
-      { id: 3, title: "Chapter 3 — Operators and Observables", date: "2024-04-01", description: "Hermitian operators, eigenvalues, and the measurement postulate.", pdfUrl: null },
+      {
+        id: 1,
+        title: "Chapter 1 — Introduction to Quantum Mechanics",
+        description:
+          "This lecture introduces the historical development of quantum mechanics, the Schrödinger equation, Born’s probability interpretation, wavefunction normalization, expectation values, statistical uncertainty, and the operators associated with position and momentum.",
+        pdfUrl: "/website/youtube notes/QM1/QM1,LEC 1.pdf",
+      },
+      {
+        id: 2,
+        title: "Chapter 2 — The Schrödinger Equation",
+        description:
+          "Probability interpretation, normalization, and time evolution.",
+        pdfUrl: "/website/youtube notes/QM1/QM1,LEC 2.pdf",
+      },
+      {
+        id: 3,
+        title: "Chapter 3 — Formalism of Quantum Mechanics",
+        description:
+          "A discussion of the mathematical formalism of quantum theory, consisting of states in Hilbert space and operators corresponding to observables.",
+        pdfUrl: "/website/youtube notes/QM1/QM1,LEC 3.pdf",
+      },
     ],
   },
- ,
   {
     id: "linear-algebra",
-    name: "Linear Algebra",
-    description: "Linear maps as the central objects — matrices as a computational tool.",
-    chapters: [
-      { id: 6, title: "Chapter 1 — Vector Spaces",  description: "Axioms, subspaces, span, linear independence, and bases.", pdfUrl: null },
-      { id: 7, title: "Chapter 2 — Linear Maps",  description: "Null space, range, rank-nullity theorem.", pdfUrl: null },
-      { id: 8, title: "Chapter 3 — Inner Product Spaces",  description: "Gram-Schmidt, orthogonal projections, and the spectral theorem.", pdfUrl: null },
-    ],
+    name: "Linear Algebra for Quantum Mechanics",
+    description:
+      "A concise introduction to linear algebra, focusing on the concepts and techniques most relevant to quantum mechanics.",
+    pdfUrl: "/website/youtube notes/QM1/LAQM.pdf",
   },
-  
-  
-  
+
+  {id: "qed",
+    name: " QED and Pseudo Quantum Electrodynamics",
+    description:"discussion of a recent extension of QED applicable to condensed matter systems, known as Pseudo Quantum Electrodynamics (PQED).",
+    pdfUrl: "/website/youtube notes/QM1/pqed.pdf",
+  },
 ];
 
 export default function Notes() {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   function toggle(id: string) {
-    setOpenCategory((prev) => (prev === id ? null : id));
+    setOpenCategory((previous) => (previous === id ? null : id));
   }
 
   return (
     <div className="space-y-12">
       <header className="space-y-4 border-b border-border/50 pb-8">
-        <h1 className="text-4xl font-bold tracking-tight">Notes & Lectures</h1>
+        <h1 className="text-4xl font-bold tracking-tight">
+          Notes &amp; Lectures
+        </h1>
+
         <p className="text-xl text-muted-foreground">
-          Select a subject to browse the chapters.
+          Select a subject to browse its chapters or open the complete file.
         </p>
       </header>
 
       <div className="space-y-3">
-        {categories.map((cat) => {
-          const isOpen = openCategory === cat.id;
+        {categories.map((category) => {
+          const isOpen = openCategory === category.id;
+          const chapterCount = category.chapters?.length ?? 0;
+
           return (
             <div
-              key={cat.id}
-              className="border border-border/50 bg-card overflow-hidden"
-              data-testid={`category-${cat.id}`}
+              key={category.id}
+              className="overflow-hidden border border-border/50 bg-card"
+              data-testid={`category-${category.id}`}
             >
               <button
-                onClick={() => toggle(cat.id)}
-                className="w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-secondary/20 transition-colors duration-200"
-                data-testid={`category-toggle-${cat.id}`}
+                type="button"
+                onClick={() => toggle(category.id)}
+                className="flex w-full items-center justify-between gap-4 p-6 text-left transition-colors duration-200 hover:bg-secondary/20"
+                data-testid={`category-toggle-${category.id}`}
               >
                 <div className="space-y-1">
-                  <h2 className="text-xl font-semibold">{cat.name}</h2>
-                  <p className="text-sm text-muted-foreground">{cat.description}</p>
+                  <h2 className="text-xl font-semibold">{category.name}</h2>
+
+                  <p className="text-sm text-muted-foreground">
+                    {category.description}
+                  </p>
                 </div>
-                <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-xs font-mono text-muted-foreground">
-                    {cat.chapters.length} {cat.chapters.length === 1 ? "chapter" : "chapters"}
+
+                <div className="flex shrink-0 items-center gap-3">
+                  <span className="font-mono text-xs text-muted-foreground">
+                    {category.pdfUrl
+                      ? "1 file"
+                      : `${chapterCount} ${
+                          chapterCount === 1 ? "chapter" : "chapters"
+                        }`}
                   </span>
+
                   {isOpen ? (
-                    <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                    <ChevronDown className="h-5 w-5 text-muted-foreground" />
                   ) : (
-                    <ChevronRight className="w-5 h-5 text-muted-foreground" />
+                    <ChevronRight className="h-5 w-5 text-muted-foreground" />
                   )}
                 </div>
               </button>
 
               {isOpen && (
-                <div className="border-t border-border/50 divide-y divide-border/30">
-                  {cat.chapters.map((ch) => (
+                <div className="divide-y divide-border/30 border-t border-border/50">
+                  {category.pdfUrl ? (
                     <div
-                      key={ch.id}
-                      className="flex items-start gap-4 px-6 py-5 hover:bg-secondary/10 transition-colors duration-150"
-                      data-testid={`chapter-${ch.id}`}
+                      className="flex items-start gap-4 px-6 py-5 transition-colors duration-150 hover:bg-secondary/10"
+                      data-testid={`single-file-${category.id}`}
                     >
-                      <FileText className="w-4 h-4 mt-1 shrink-0 text-muted-foreground" />
-                      <div className="flex-1 min-w-0">
-                        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-1">
-                          <div className="flex-1 min-w-0">
-                            <h3 className="font-medium">{ch.title}</h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed mt-1">{ch.description}</p>
-                          </div>
-                          <div className="flex items-center gap-3 shrink-0 sm:ml-4">
-                            <time className="text-xs font-mono text-muted-foreground">{ch.date}</time>
-                            {ch.pdfUrl ? (
-                              <a
-                                href={ch.pdfUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono border border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-150"
-                                data-testid={`pdf-link-${ch.id}`}
-                              >
-                                <ExternalLink className="w-3 h-3" />
-                                View PDF
-                              </a>
-                            ) : (
-                              <span
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono border border-border/40 text-muted-foreground/50 cursor-default select-none"
-                                data-testid={`pdf-soon-${ch.id}`}
-                              >
-                                <FileText className="w-3 h-3" />
-                                Coming soon
-                              </span>
-                            )}
+                      <FileText className="mt-1 h-4 w-4 shrink-0 text-muted-foreground" />
+
+                      <div className="flex min-w-0 flex-1 flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                        <div className="min-w-0">
+                          <h3 className="font-medium">{category.name}</h3>
+
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                            Complete notes available as one PDF file.
+                          </p>
+                        </div>
+
+                        <a
+                          href={category.pdfUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex shrink-0 items-center justify-center gap-1.5 border border-primary/60 px-3 py-1.5 font-mono text-xs text-primary transition-colors duration-150 hover:bg-primary hover:text-primary-foreground"
+                          data-testid={`pdf-link-${category.id}`}
+                        >
+                          <ExternalLink className="h-3 w-3" />
+                          View PDF
+                        </a>
+                      </div>
+                    </div>
+                  ) : (
+                    category.chapters?.map((chapter) => (
+                      <div
+                        key={chapter.id}
+                        className="flex items-start gap-4 px-6 py-5 transition-colors duration-150 hover:bg-secondary/10"
+                        data-testid={`chapter-${chapter.id}`}
+                      >
+                        <FileText className="mt-1 h-4 w-4 shrink-0 text-muted-foreground" />
+
+                        <div className="min-w-0 flex-1">
+                          <div className="mb-1 flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+                            <div className="min-w-0 flex-1">
+                              <h3 className="font-medium">{chapter.title}</h3>
+
+                              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                                {chapter.description}
+                              </p>
+                            </div>
+
+                            <div className="flex shrink-0 items-center gap-3 sm:ml-4">
+                              {chapter.date && (
+                                <time className="font-mono text-xs text-muted-foreground">
+                                  {chapter.date}
+                                </time>
+                              )}
+
+                              {chapter.pdfUrl ? (
+                                <a
+                                  href={chapter.pdfUrl}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={(event) => event.stopPropagation()}
+                                  className="inline-flex items-center gap-1.5 border border-primary/60 px-3 py-1.5 font-mono text-xs text-primary transition-colors duration-150 hover:bg-primary hover:text-primary-foreground"
+                                  data-testid={`pdf-link-${chapter.id}`}
+                                >
+                                  <ExternalLink className="h-3 w-3" />
+                                  View PDF
+                                </a>
+                              ) : (
+                                <span
+                                  className="inline-flex cursor-default select-none items-center gap-1.5 border border-border/40 px-3 py-1.5 font-mono text-xs text-muted-foreground/50"
+                                  data-testid={`pdf-soon-${chapter.id}`}
+                                >
+                                  <FileText className="h-3 w-3" />
+                                  Coming soon
+                                </span>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))
+                  )}
                 </div>
               )}
             </div>
