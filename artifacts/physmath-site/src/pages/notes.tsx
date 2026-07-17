@@ -41,14 +41,14 @@ const categories: Category[] = [
         title: "Chapter 2 — The Schrödinger Equation",
         description:
           "Probability interpretation, normalization, and time evolution.",
-        pdfUrl: "/website/youtube notes/QM1/QM1,LEC2.pdf",
+        pdfUrl: "/website/youtube notes/QM1/QM1, LEC2.pdf",
       },
       {
         id: 3,
         title: "Chapter 3 — Formalism of Quantum Mechanics",
         description:
           "A discussion of the mathematical formalism of quantum theory, consisting of states in Hilbert space and operators corresponding to observables.",
-        pdfUrl: "/website/youtube notes/QM1/QM1,LEC3.pdf",
+        pdfUrl: "/website/youtube notes/QM1/QM1, LEC3.pdf",
       },
     ],
   },
@@ -63,8 +63,66 @@ const categories: Category[] = [
   {id: "qed",
     name: " QED and Pseudo Quantum Electrodynamics",
     description:"discussion of a recent extension of QED applicable to condensed matter systems, known as Pseudo Quantum Electrodynamics (PQED).",
-    pdfUrl: "/website/youtube notes/QM1/pqed.pdf",
+    pdfUrl: "/website/physics things/pqed.pdf",
   },
+   {id: "topology of R",
+    name: " Topology of R",
+    description:" A discussion of the topology of the real line, including open and closed sets, limit points, and continuity.",
+    pdfUrl: "/website/math things/The Topology of R.pdf",
+  },
+
+  {
+    id: "Alexandroff Spaces",
+    name: "Alexandroff Spaces",
+    description:
+      "An introduction to Alexandroff spaces, a class of topological spaces that are particularly useful in the study of order theory and lattice theory.",
+    chapters: [
+      {
+        id: 1,
+        title: "introduction to Alexandroff Spaces",
+        description:
+          "This paper introduces the concept of Alexandroff spaces, their properties, and examples",
+        pdfUrl: "/website/math things/Alexandroff Spaces.pdf",
+      },
+      {
+        id: 2,
+        title: "Presentation - Alexandroff Spaces",
+        description:
+          "This presentation provides an overview of Alexandroff spaces, including their definitionn",
+        pdfUrl: "/website/math things/Alexandroff_slides.pdf",
+      },]
+  },
+
+  {
+    id: "partition theory",
+    name: "Partition Theory",
+    description:
+      "An introduction to partition theory, a branch of number theory that deals with the ways of writing a number as a sum of positive integers.",
+    chapters: [
+      {
+        id: 1,
+        title: "introduction to Partition Theory",
+        description:
+          "This paper introduces the concept of partition theory, their properties, and examples",
+        pdfUrl: "/website/math things/Partition Theory.pdf",
+      },
+      {
+        id: 2,
+        title: "Presentation - Partition Theory",
+        description:
+          "This presentation provides an overview of partition theory, including their definitionn",
+        pdfUrl: "/website/math things/partition-slides.pdf",
+      },]
+  },
+
+   {id: "Calculus of Variations",
+    name: "Calculus of Variations",
+    description:" A discussion of the calculus of variations, including the Euler-Lagrange equation and its applications.",
+    pdfUrl: "/website/math things/Calculus of Variations.pdf",
+  },
+
+  
+ 
 ];
 
 export default function Notes() {
