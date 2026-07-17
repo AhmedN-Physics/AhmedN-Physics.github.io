@@ -41,14 +41,14 @@ const categories: Category[] = [
         title: "Chapter 2 — The Schrödinger Equation",
         description:
           "Probability interpretation, normalization, and time evolution.",
-        pdfUrl: "/website/youtube notes/QM1/QM1,LEC 2.pdf",
+        pdfUrl: "/website/youtube notes/QM1/QM1,LEC2.pdf",
       },
       {
         id: 3,
         title: "Chapter 3 — Formalism of Quantum Mechanics",
         description:
           "A discussion of the mathematical formalism of quantum theory, consisting of states in Hilbert space and operators corresponding to observables.",
-        pdfUrl: "/website/youtube notes/QM1/QM1,LEC 3.pdf",
+        pdfUrl: "/website/youtube notes/QM1/QM1,LEC3.pdf",
       },
     ],
   },
