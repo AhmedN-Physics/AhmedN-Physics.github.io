@@ -37,14 +37,10 @@ export default function Publications() {
             <p className="text-muted-foreground leading-relaxed text-sm max-w-3xl">
               {pub.abstract}
             </p>
-            <div className="pt-2">
-              <a href="#" className="text-sm font-mono text-primary underline underline-offset-4 hover:text-foreground transition-colors" onClick={(e) => e.preventDefault()}>
-                [PDF]
-              </a>
-              <span className="mx-2 text-muted-foreground">/</span>
-              <a href="#" className="text-sm font-mono text-primary underline underline-offset-4 hover:text-foreground transition-colors" onClick={(e) => e.preventDefault()}>
-                [arXiv]
-              </a>
+            <div className="flex flex-wrap gap-x-3 gap-y-2 pt-2 text-sm font-mono text-muted-foreground">
+              <span>PDF — Coming soon</span>
+              <span aria-hidden="true">/</span>
+              <span>arXiv — Coming soon</span>
             </div>
           </article>
         ))}

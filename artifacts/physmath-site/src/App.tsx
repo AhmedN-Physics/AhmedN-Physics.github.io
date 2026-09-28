@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -16,6 +17,7 @@ const queryClient = new QueryClient();
 function Router() {
   return (
     <MainLayout>
+      <Seo />
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />

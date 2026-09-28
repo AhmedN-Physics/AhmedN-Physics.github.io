@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearch } from "wouter";
 import {
   ChevronDown,
   ChevronRight,
@@ -12,6 +13,8 @@ type Chapter = {
   description: string;
   date?: string;
   pdfUrl?: string | null;
+  solvedPdfUrl?: string | null;
+  unsolvedPdfUrl?: string | null;
 };
 
 type Category = {
@@ -23,6 +26,34 @@ type Category = {
 };
 
 const categories: Category[] = [
+  {
+    id: "electromagnetism-in-a-nutshell",
+    name: "Electromagnetism in a nutshell",
+    description:
+      "An introduction to the fundamental principles and mathematical framework of electromagnetism, including vector calculus and electrostatics.",
+    chapters: [
+      {
+        id: 1,
+        title: "Chapter 1 — Vector Calculus ",
+        description:
+          "This lecture introduces the mathematical framework of vector calculus, including vector fields, divergence, curl, and the fundamental theorems of vector calculus.",
+        // Replace null with the PDF path once the file is available.
+        solvedPdfUrl: null,
+        unsolvedPdfUrl: null,
+      },
+      {
+        id: 2,
+        title: "Chapter 2 — Electrostatics ",
+        description:
+          "Probability interpretation, normalization, and time evolution.",
+        // Replace null with the PDF path once the file is available.
+        solvedPdfUrl: null,
+        unsolvedPdfUrl: null,
+      },
+      
+    ],
+  },
+  
   {
     id: "quantum-mechanics",
     name: "Quantum Mechanics",
@@ -125,8 +156,62 @@ const categories: Category[] = [
  
 ];
 
+function ChapterPdfLinks({ chapter }: { chapter: Chapter }) {
+  const hasVersions =
+    chapter.solvedPdfUrl !== undefined || chapter.unsolvedPdfUrl !== undefined;
+  const links = hasVersions
+    ? [
+        { key: "solved", label: "Solved PDF", url: chapter.solvedPdfUrl },
+        { key: "unsolved", label: "Unsolved PDF", url: chapter.unsolvedPdfUrl },
+      ]
+    : [{ key: "original", label: "View PDF", url: chapter.pdfUrl }];
+
+  return (
+    <div className="flex flex-wrap gap-2 sm:flex-col sm:items-end">
+      {links.map(({ key, label, url }) =>
+        url ? (
+          <a
+            key={key}
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${chapter.title.trim()} — ${label} (opens in a new tab)`}
+            className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap border border-primary/60 px-3 py-1.5 font-mono text-xs text-primary transition-colors duration-150 hover:bg-primary hover:text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            <ExternalLink aria-hidden="true" className="h-3 w-3" />
+            {label}
+          </a>
+        ) : (
+          <span
+            key={key}
+            className="inline-flex items-center gap-1.5 border border-border/40 px-3 py-1.5 font-mono text-xs text-muted-foreground"
+          >
+            <FileText aria-hidden="true" className="h-3 w-3 shrink-0" />
+            {hasVersions ? `${label} — Coming soon` : "Coming soon"}
+          </span>
+        ),
+      )}
+    </div>
+  );
+}
+
 export default function Notes() {
-  const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const search = useSearch();
+  const requestedCategory = new URLSearchParams(search).get("category");
+  const targetCategory = categories.find(({ id }) => id === requestedCategory)?.id ?? null;
+  const [openCategory, setOpenCategory] = useState<string | null>(targetCategory);
+
+  useEffect(() => {
+    if (!targetCategory) return;
+
+    setOpenCategory(targetCategory);
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(`note-${targetCategory}`)?.scrollIntoView({
+        block: "start",
+      });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [targetCategory]);
 
   function toggle(id: string) {
     setOpenCategory((previous) => (previous === id ? null : id));
@@ -152,12 +237,14 @@ export default function Notes() {
           return (
             <div
               key={category.id}
-              className="overflow-hidden border border-border/50 bg-card"
+              id={`note-${category.id}`}
+              className="scroll-mt-6 overflow-hidden border border-border/50 bg-card"
               data-testid={`category-${category.id}`}
             >
               <button
                 type="button"
                 onClick={() => toggle(category.id)}
+                aria-expanded={isOpen}
                 className="flex w-full items-center justify-between gap-4 p-6 text-left transition-colors duration-200 hover:bg-secondary/20"
                 data-testid={`category-toggle-${category.id}`}
               >
@@ -235,34 +322,14 @@ export default function Notes() {
                               </p>
                             </div>
 
-                            <div className="flex shrink-0 items-center gap-3 sm:ml-4">
+                            <div className="flex flex-wrap items-center gap-3 sm:ml-4 sm:max-w-[45%] sm:shrink-0 sm:flex-col sm:items-end">
                               {chapter.date && (
                                 <time className="font-mono text-xs text-muted-foreground">
                                   {chapter.date}
                                 </time>
                               )}
 
-                              {chapter.pdfUrl ? (
-                                <a
-                                  href={chapter.pdfUrl}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  onClick={(event) => event.stopPropagation()}
-                                  className="inline-flex items-center gap-1.5 border border-primary/60 px-3 py-1.5 font-mono text-xs text-primary transition-colors duration-150 hover:bg-primary hover:text-primary-foreground"
-                                  data-testid={`pdf-link-${chapter.id}`}
-                                >
-                                  <ExternalLink className="h-3 w-3" />
-                                  View PDF
-                                </a>
-                              ) : (
-                                <span
-                                  className="inline-flex cursor-default select-none items-center gap-1.5 border border-border/40 px-3 py-1.5 font-mono text-xs text-muted-foreground/50"
-                                  data-testid={`pdf-soon-${chapter.id}`}
-                                >
-                                  <FileText className="h-3 w-3" />
-                                  Coming soon
-                                </span>
-                              )}
+                              <ChapterPdfLinks chapter={chapter} />
                             </div>
                           </div>
                         </div>

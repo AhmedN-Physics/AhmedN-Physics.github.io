@@ -1,0 +1,22 @@
+{
+  "/": {
+    "title": "Ahmed N. Alotaibi | Physics & Mathematics",
+    "description": "Ahmed Nasser Alotaibi (Ahmed N. Alotaibi), a physics and mathematics student at KFUPM. Explore his research, lecture notes, and educational videos."
+  },
+  "/about": {
+    "title": "About Ahmed N. Alotaibi | Physics & Mathematics",
+    "description": "Learn about Ahmed Nasser Alotaibi, a physics and mathematics student at King Fahd University of Petroleum and Minerals, and his academic interests."
+  },
+  "/notes": {
+    "title": "Physics & Mathematics Notes | Ahmed N. Alotaibi",
+    "description": "Explore physics and mathematics lecture notes by Ahmed N. Alotaibi, including electromagnetism, quantum mechanics, topology, and calculus of variations."
+  },
+  "/publications": {
+    "title": "Research & Publications | Ahmed N. Alotaibi",
+    "description": "Research and publication updates from Ahmed N. Alotaibi, including work on variational approaches to degenerate perturbation theory."
+  },
+  "/contact": {
+    "title": "Contact Ahmed N. Alotaibi",
+    "description": "Contact Ahmed Nasser Alotaibi about academic collaborations, physics and mathematics, tutoring, and educational lectures."
+  }
+}

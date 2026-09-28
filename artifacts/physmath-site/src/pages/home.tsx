@@ -81,21 +81,20 @@ export default function Home() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <Link
-            href="/notes"
+            href="/notes?category=electromagnetism-in-a-nutshell"
             className="group block border border-border/50 bg-card p-6 transition-colors hover:bg-secondary/30"
             data-testid="card-recent-1"
           >
             <div className="mb-3 font-mono text-xs text-muted-foreground">
-              Quantum Mechanics
+              Electromagnetism in a nutshell
             </div>
 
             <h3 className="mb-2 text-lg font-medium transition-colors group-hover:text-primary/80">
-              Foundations and Applications
+              Vector Calculus and Electrostatics
             </h3>
 
             <p className="line-clamp-2 text-sm text-muted-foreground">
-              An introduction to the mathematical framework of quantum
-              mechanics, including Hilbert spaces and observables.
+              An introduction to the fundamental principles and mathematical framework of electromagnetism, including vector calculus and electrostatics.
             </p>
           </Link>
         </div>
