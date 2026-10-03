@@ -39,7 +39,7 @@ const categories: Category[] = [
           "This lecture introduces the mathematical framework of vector calculus, including vector fields, divergence, curl, and the fundamental theorems of vector calculus.",
         // Replace null with the PDF path once the file is available.
         solvedPdfUrl: null,
-        unsolvedPdfUrl: null,
+        unsolvedPdfUrl: "/website/physics things/electromagnetism-chapter-1-unsolved.pdf",
       },
       {
         id: 2,
