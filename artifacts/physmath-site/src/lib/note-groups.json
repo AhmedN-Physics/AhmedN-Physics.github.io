@@ -1,0 +1,31 @@
+[
+  {
+    "slug": "courses",
+    "name": "Courses",
+    "description": "Structured notes and exercises to work through a subject, chapter by chapter.",
+    "members": [
+      "electromagnetism-in-a-nutshell",
+      "quantum-mechanics",
+      "linear-algebra"
+    ]
+  },
+  {
+    "slug": "physics",
+    "name": "Topics in Physics",
+    "description": "Short discussions and focused notes exploring ideas in physics.",
+    "members": [
+      "qed"
+    ]
+  },
+  {
+    "slug": "mathematics",
+    "name": "Topics in Mathematics",
+    "description": "Explore mathematical ideas through short notes, discussions, and presentations.",
+    "members": [
+      "topology-of-r",
+      "alexandroff-spaces",
+      "partition-theory",
+      "calculus-of-variations"
+    ]
+  }
+]

@@ -4,6 +4,14 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 const site = new URL("../", import.meta.url);
 const output = new URL("dist/public/", site);
 const pages = JSON.parse(await readFile(new URL("src/lib/seo-pages.json", site), "utf8"));
+const courses = JSON.parse(await readFile(new URL("src/lib/courses.json", site), "utf8"));
+for (const course of courses) {
+  pages[`/notes/${course.slug}`] = { title: `${course.name} | Ahmed N. Alotaibi`, description: course.description };
+}
+const groups = JSON.parse(await readFile(new URL("src/lib/note-groups.json", site), "utf8"));
+for (const group of groups) {
+  pages[`/notes/category/${group.slug}`] = { title: `${group.name} | Ahmed N. Alotaibi`, description: group.description };
+}
 const template = await readFile(new URL("index.html", output), "utf8");
 const origin = "https://ahmedn-physics.github.io";
 const escape = (text) => text.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");

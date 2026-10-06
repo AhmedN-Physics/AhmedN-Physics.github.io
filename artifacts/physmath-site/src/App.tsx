@@ -7,6 +7,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 
 import Home from "@/pages/home";
 import About from "@/pages/about";
+import CoursePage from "@/pages/course";
+import NoteGroup from "@/pages/note-group";
 import Notes from "@/pages/notes";
 import Publications from "@/pages/publications";
 import Contact from "@/pages/contact";
@@ -22,6 +24,8 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/notes" component={Notes} />
+        <Route path="/notes/category/:slug">{(params) => <NoteGroup slug={params.slug} />}</Route>
+        <Route path="/notes/:slug">{(params) => <CoursePage slug={params.slug} />}</Route>
         <Route path="/publications" component={Publications} />
         <Route path="/contact" component={Contact} />
         <Route component={NotFound} />

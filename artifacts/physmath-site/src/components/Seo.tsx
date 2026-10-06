@@ -1,6 +1,16 @@
 import { useEffect } from "react";
 import { useLocation } from "wouter";
-import pages from "@/lib/seo-pages.json";
+import groups from "@/lib/note-groups.json";
+import basePages from "@/lib/seo-pages.json";
+import { courses } from "@/lib/courses";
+const pages: Record<string, { title: string; description: string }> = {
+  ...basePages,
+  ...Object.fromEntries(groups.map((group) => [`/notes/category/${group.slug}`, { title: `${group.name} | Ahmed N. Alotaibi`, description: group.description }])),
+  ...Object.fromEntries(courses.map((course) => [`/notes/${course.slug}`, {
+    title: `${course.name} | Ahmed N. Alotaibi`,
+    description: course.description,
+  }])),
+};
 
 const origin = "https://ahmedn-physics.github.io";
 

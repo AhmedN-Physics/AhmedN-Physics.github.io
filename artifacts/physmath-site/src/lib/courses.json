@@ -1,0 +1,130 @@
+[
+  {
+    "id": "electromagnetism-in-a-nutshell",
+    "name": "Electromagnetism in a nutshell",
+    "description": "An introduction to the fundamental principles and mathematical framework of electromagnetism, including vector calculus and electrostatics.",
+    "chapters": [
+      {
+        "id": 1,
+        "title": "Chapter 1 \u2014 Vector Calculus ",
+        "description": "This lecture introduces the mathematical framework of vector calculus, including vector fields, divergence, curl, and the fundamental theorems of vector calculus.",
+        "solvedPdfUrl": "/website/physics things/electromagnetism-chapter-1-solved.pdf",
+        "unsolvedPdfUrl": "/website/physics things/electromagnetism-chapter-1-unsolved.pdf"
+      },
+      {
+        "id": 2,
+        "title": "Chapter 2 \u2014 Electrostatics ",
+        "description": "in this lecture, we explore the principles of electrostatics, including Coulomb's law, electric fields, Gauss's law",
+        "solvedPdfUrl": "/website/physics things/electromagnetism-chapter-2-solved.pdf",
+        "unsolvedPdfUrl": null
+      }
+    ],
+    "slug": "electromagnetism-in-a-nutshell",
+    "group": "Physics",
+    "image": {
+      "src": "/electromagnetism-cover.png",
+      "alt": "Abstract purple, pink, and blue light trails illustrating electromagnetism"
+    }
+  },
+  {
+    "id": "quantum-mechanics",
+    "name": "Quantum Mechanics",
+    "description": "An introduction to the fundamental principles and applications of quantum mechanics.",
+    "chapters": [
+      {
+        "id": 1,
+        "title": "Chapter 1 \u2014 Introduction to Quantum Mechanics",
+        "description": "This lecture introduces the historical development of quantum mechanics, the Schr\u00f6dinger equation, Born\u2019s probability interpretation, wavefunction normalization, expectation values, statistical uncertainty, and the operators associated with position and momentum.",
+        "pdfUrl": "/website/youtube notes/QM1/QM1,LEC 1.pdf"
+      },
+      {
+        "id": 2,
+        "title": "Chapter 2 \u2014 The Schr\u00f6dinger Equation",
+        "description": "Probability interpretation, normalization, and time evolution.",
+        "pdfUrl": "/website/youtube notes/QM1/QM1, LEC2.pdf"
+      },
+      {
+        "id": 3,
+        "title": "Chapter 3 \u2014 Formalism of Quantum Mechanics",
+        "description": "A discussion of the mathematical formalism of quantum theory, consisting of states in Hilbert space and operators corresponding to observables.",
+        "pdfUrl": "/website/youtube notes/QM1/QM1, LEC3.pdf"
+      }
+    ],
+    "slug": "quantum-mechanics",
+    "group": "Physics"
+  },
+  {
+    "id": "linear-algebra",
+    "name": "Linear Algebra for Quantum Mechanics",
+    "description": "A concise introduction to linear algebra, focusing on the concepts and techniques most relevant to quantum mechanics.",
+    "pdfUrl": "/website/youtube notes/QM1/LAQM.pdf",
+    "slug": "linear-algebra",
+    "group": "Physics"
+  },
+  {
+    "id": "qed",
+    "name": "QED and Pseudo Quantum Electrodynamics",
+    "description": "discussion of a recent extension of QED applicable to condensed matter systems, known as Pseudo Quantum Electrodynamics (PQED).",
+    "pdfUrl": "/website/physics things/pqed.pdf",
+    "slug": "qed",
+    "group": "Physics"
+  },
+  {
+    "id": "topology of R",
+    "name": "Topology of R",
+    "description": "A discussion of the topology of the real line, including open and closed sets, limit points, and continuity.",
+    "pdfUrl": "/website/math things/The Topology of R.pdf",
+    "slug": "topology-of-r",
+    "group": "Mathematics"
+  },
+  {
+    "id": "Alexandroff Spaces",
+    "name": "Alexandroff Spaces",
+    "description": "An introduction to Alexandroff spaces, a class of topological spaces that are particularly useful in the study of order theory and lattice theory.",
+    "chapters": [
+      {
+        "id": 1,
+        "title": "introduction to Alexandroff Spaces",
+        "description": "This paper introduces the concept of Alexandroff spaces, their properties, and examples",
+        "pdfUrl": "/website/math things/Alexandroff Spaces.pdf"
+      },
+      {
+        "id": 2,
+        "title": "Presentation - Alexandroff Spaces",
+        "description": "This presentation provides an overview of Alexandroff spaces, including their definitionn",
+        "pdfUrl": "/website/math things/Alexandroff_slides.pdf"
+      }
+    ],
+    "slug": "alexandroff-spaces",
+    "group": "Mathematics"
+  },
+  {
+    "id": "partition theory",
+    "name": "Partition Theory",
+    "description": "An introduction to partition theory, a branch of number theory that deals with the ways of writing a number as a sum of positive integers.",
+    "chapters": [
+      {
+        "id": 1,
+        "title": "introduction to Partition Theory",
+        "description": "This paper introduces the concept of partition theory, their properties, and examples",
+        "pdfUrl": "/website/math things/Partition Theory.pdf"
+      },
+      {
+        "id": 2,
+        "title": "Presentation - Partition Theory",
+        "description": "This presentation provides an overview of partition theory, including their definitionn",
+        "pdfUrl": "/website/math things/partition-slides.pdf"
+      }
+    ],
+    "slug": "partition-theory",
+    "group": "Mathematics"
+  },
+  {
+    "id": "Calculus of Variations",
+    "name": "Calculus of Variations",
+    "description": "A discussion of the calculus of variations, including the Euler-Lagrange equation and its applications.",
+    "pdfUrl": "/website/math things/Calculus of Variations.pdf",
+    "slug": "calculus-of-variations",
+    "group": "Mathematics"
+  }
+]

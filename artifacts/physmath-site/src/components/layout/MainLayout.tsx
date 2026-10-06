@@ -27,7 +27,8 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         
         <nav className="flex md:flex-col gap-4 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0">
           {navItems.map((item) => {
-            const isActive = (location.replace(/\/+$/, "") || "/") === item.href;
+            const currentPath = location.replace(/\/+$/, "") || "/";
+            const isActive = currentPath === item.href || (item.href === "/notes" && currentPath.startsWith("/notes/"));
             return (
               <Link
                 key={item.href}

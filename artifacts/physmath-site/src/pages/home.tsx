@@ -81,10 +81,11 @@ export default function Home() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <Link
-            href="/notes?category=electromagnetism-in-a-nutshell"
+            href="/notes/electromagnetism-in-a-nutshell"
             className="group block border border-border/50 bg-card p-6 transition-colors hover:bg-secondary/30"
             data-testid="card-recent-1"
           >
+            <img src="/electromagnetism-cover.png" alt="Abstract purple, pink, and blue light trails illustrating electromagnetism" width={640} height={360} loading="lazy" className="mb-5 aspect-video w-full object-cover" />
             <div className="mb-3 font-mono text-xs text-muted-foreground">
               Electromagnetism in a nutshell
             </div>
