@@ -24,17 +24,17 @@ export default function CoursePage({ slug }: { slug: string }) {
       <Link href={group ? `/notes/category/${group.slug}` : "/notes"} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4">
         <ArrowLeft aria-hidden="true" className="h-4 w-4" /> {group?.name ?? "All notes & lectures"}
       </Link>
-      <header className="space-y-4 border-b border-border/50 pb-8">
-        <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">{course.group}</p>
+      <header className="page-heading space-y-4">
+        <p className="eyebrow">{course.group}</p>
         <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl">{course.name}</h1>
         {course.chapters && <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">{course.description}</p>}
         <p className="text-sm text-muted-foreground">Notes by Ahmed N. Alotaibi</p>
-        {course.image && <img src={course.image.src} alt={course.image.alt} width={640} height={360} className="h-auto w-full max-w-2xl" />}
+        {course.image && <img src={course.image.src} alt={course.image.alt} width={course.image.width ?? 640} height={course.image.height ?? 360} className="h-auto w-full max-w-2xl rounded-xl" />}
       </header>
       <section aria-label="Notes and resources">
         <div className="space-y-4">
           {resources.map((chapter) => (
-            <article key={chapter.id} id={`chapter-${chapter.id}`} className="scroll-mt-6 border border-border/60 bg-card p-5 sm:p-6" data-testid={`chapter-${chapter.id}`}>
+            <article key={chapter.id} id={`chapter-${chapter.id}`} className="surface-card scroll-mt-6 p-5 sm:p-6" data-testid={`chapter-${chapter.id}`}>
               <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
                 <div className="min-w-0 flex-1">
                   <h2 className="flex items-start gap-3 text-xl font-semibold leading-snug">

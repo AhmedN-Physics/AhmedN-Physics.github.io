@@ -23,7 +23,7 @@ export default function Publications() {
         {publications.map((pub) => (
           <article 
             key={pub.id}
-            className="space-y-3"
+            className="surface-card space-y-3 p-6 sm:p-8"
             data-testid={`publication-${pub.id}`}
           >
             <h2 className="text-xl font-semibold text-foreground">

@@ -13,7 +13,7 @@ export type Course = {
   id: string;
   slug: string;
   group: string;
-  image?: { src: string; alt: string };
+  image?: { src: string; alt: string; width?: number; height?: number };
   name: string;
   description: string;
   chapters?: Chapter[];

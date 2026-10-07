@@ -43,7 +43,7 @@ export function ChapterPdfLinks({ chapter }: { chapter: Chapter }) {
             target="_blank"
             rel="noreferrer"
             aria-label={`${chapter.title.trim()} — ${label} (opens in a new tab)`}
-            className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap border border-primary/60 px-3 py-1.5 font-mono text-xs text-primary transition-colors duration-150 hover:bg-primary hover:text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            className="resource-link inline-flex items-center justify-center gap-1.5 whitespace-nowrap border border-primary/60 px-3 py-1.5 font-mono text-xs text-primary transition-colors duration-150 hover:bg-primary hover:text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             <ExternalLink aria-hidden="true" className="h-3 w-3" />
             {label}
@@ -51,7 +51,7 @@ export function ChapterPdfLinks({ chapter }: { chapter: Chapter }) {
         ) : (
           <span
             key={key}
-            className="inline-flex items-center gap-1.5 border border-border/40 px-3 py-1.5 font-mono text-xs text-muted-foreground"
+            className="resource-link inline-flex items-center gap-1.5 border border-border/40 px-3 py-1.5 font-mono text-xs text-muted-foreground"
           >
             <FileText aria-hidden="true" className="h-3 w-3 shrink-0" />
             {hasVersions ? `${label} — Coming soon` : "Coming soon"}

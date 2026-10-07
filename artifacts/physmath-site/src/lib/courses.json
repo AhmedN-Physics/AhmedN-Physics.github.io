@@ -51,7 +51,13 @@
       }
     ],
     "slug": "quantum-mechanics",
-    "group": "Physics"
+    "group": "Physics",
+    "image": {
+      "src": "/quantum-mechanics-cover.png",
+      "alt": "Colorful cat silhouette surrounded by quantum equations and geometric diagrams",
+      "width": 1200,
+      "height": 800
+    }
   },
   {
     "id": "linear-algebra",
@@ -59,7 +65,13 @@
     "description": "A concise introduction to linear algebra, focusing on the concepts and techniques most relevant to quantum mechanics.",
     "pdfUrl": "/website/youtube notes/QM1/LAQM.pdf",
     "slug": "linear-algebra",
-    "group": "Physics"
+    "group": "Physics",
+    "image": {
+      "src": "/linear-algebra-cover.png",
+      "alt": "Intersecting planes and vectors in three-dimensional space",
+      "width": 3840,
+      "height": 2160
+    }
   },
   {
     "id": "qed",

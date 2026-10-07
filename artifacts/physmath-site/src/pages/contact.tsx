@@ -1,4 +1,4 @@
-import { Mail, Github, Youtube, BookOpen } from "lucide-react";
+import { Mail, Youtube, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Contact() {
@@ -32,7 +32,7 @@ export default function Contact() {
               href="https://youtube.com/@physmathdoneright?si=nEzytJ7-G2S39nPG" 
               target="_blank" 
               rel="noreferrer"
-              className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors p-3 border border-border/50 bg-card hover:bg-secondary/20"
+              className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors p-4 surface-card hover:bg-secondary/20"
               data-testid="link-youtube"
             >
               <Youtube className="w-5 h-5 shrink-0" />
@@ -42,33 +42,18 @@ export default function Contact() {
               </div>
             </a>
             
-            <a 
-              href="https://github.com" 
-              target="_blank" 
-              rel="noreferrer"
-              className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors p-3 border border-border/50 bg-card hover:bg-secondary/20"
-              data-testid="link-github"
-            >
-              <Github className="w-5 h-5 shrink-0" />
-              <div>
-                <div className="font-medium text-foreground">GitHub</div>
-                <div className="text-sm font-mono">Code for numerical simulations and plots</div>
-              </div>
-            </a>
 
-            <a 
-              href="#" 
-              target="_blank" 
-              rel="noreferrer"
-              className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors p-3 border border-border/50 bg-card hover:bg-secondary/20"
-              data-testid="link-arxiv"
+
+            <div
+              className="flex items-center gap-4 text-muted-foreground p-4 surface-card"
+              data-testid="arxiv-coming-soon"
             >
-              <BookOpen className="w-5 h-5 shrink-0" />
+              <BookOpen aria-hidden="true" className="w-5 h-5 shrink-0" />
               <div>
                 <div className="font-medium text-foreground">arXiv</div>
-                <div className="text-sm font-mono">Preprints and drafts</div>
+                <div className="text-sm font-mono">Coming soon</div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
