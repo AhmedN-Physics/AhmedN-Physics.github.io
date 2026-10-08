@@ -1,3 +1,4 @@
+import { SectionDivider } from "@/components/SectionDivider";
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, FileText } from "lucide-react";
@@ -32,6 +33,7 @@ export default function CoursePage({ slug }: { slug: string }) {
         {course.image && <img src={course.image.src} alt={course.image.alt} width={course.image.width ?? 640} height={course.image.height ?? 360} className="h-auto w-full max-w-2xl rounded-xl" />}
       </header>
       <section aria-label="Notes and resources">
+        <div className="mb-8"><SectionDivider symbol="ℏ" /></div>
         <div className="space-y-4">
           {resources.map((chapter) => (
             <article key={chapter.id} id={`chapter-${chapter.id}`} className="surface-card scroll-mt-6 p-5 sm:p-6" data-testid={`chapter-${chapter.id}`}>

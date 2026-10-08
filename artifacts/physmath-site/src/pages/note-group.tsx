@@ -1,3 +1,4 @@
+import { SectionDivider } from "@/components/SectionDivider";
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, BookOpen } from "lucide-react";
@@ -18,6 +19,8 @@ export default function NoteGroup({ slug }: { slug: string }) {
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{group.name}</h1>
         <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">{group.description}</p>
       </header>
+      <div className="space-y-8">
+        <SectionDivider symbol="∇" />
       <div className="grid gap-4 lg:grid-cols-2">
         {entries.map(course => (
           <Link key={course.slug} href={`/notes/${course.slug}`} data-testid={`course-card-${course.slug}`} className="interactive-card group flex min-w-0 flex-col overflow-hidden p-6">
@@ -28,6 +31,7 @@ export default function NoteGroup({ slug }: { slug: string }) {
             <span className="mt-auto flex items-center gap-2 pt-6 text-sm font-semibold text-primary">Explore notes <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
           </Link>
         ))}
+      </div>
       </div>
     </div>
   );
